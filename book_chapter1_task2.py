@@ -46,8 +46,15 @@ def linear_median(A):
 
     return A[lo]
 
+def median(A):
+    idx = len(A)//2
+    A = sorted(A)
+    return  A[idx]
 
 
-
-list1 = [200, 7, 18, 1, 0, 3, 79]
-print(linear_median(list1))
+list1 = [5, 7, 18, 1, 0, 3, 79]
+list2 = [5, 7, 18, 1, 0, 3, 79]
+# print(linear_median(list1))
+print(median(list2))
+# print(list1)
+print(list2)
