@@ -1,4 +1,5 @@
 import random
+import timeit
 
 
 def partition(A, lo, hi, idx):
@@ -29,6 +30,7 @@ def partition(A, lo, hi, idx):
     A[lo], A[j] = A[j], A[lo]
     return j
 
+
 def linear_median(A):
     lo = 0
     hi = len(A) - 1
@@ -40,21 +42,23 @@ def linear_median(A):
         if j == mid:
             return A[j]
         if j < mid:
-            lo = j+1
+            lo = j + 1
         else:
             hi = j - 1
 
     return A[lo]
 
+
 def median(A):
-    idx = len(A)//2
-    A = sorted(A)
-    return  A[idx]
+    idx = len(A) // 2
+    A.sort()
+    return A[idx]
 
 
 list1 = [5, 7, 18, 1, 0, 3, 79]
-list2 = [5, 7, 18, 1, 0, 3, 79]
-# print(linear_median(list1))
+list1 = [5, 7, 18, 1, 0, 3, 79]
+print(linear_median(list1))
 print(median(list2))
-# print(list1)
-print(list2)
+
+print(timeit.timeit("linear_median([5, 7, 18, 1, 0, 3, 79])", setup="from __main__ import linear_median"))
+print(timeit.timeit("median([5, 7, 18, 1, 0, 3, 79])", setup="from __main__ import median"))
