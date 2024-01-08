@@ -62,3 +62,4 @@ print(median(list2))
 
 print(timeit.timeit("linear_median([5, 7, 18, 1, 0, 3, 79])", setup="from __main__ import linear_median"))
 print(timeit.timeit("median([5, 7, 18, 1, 0, 3, 79])", setup="from __main__ import median"))
+
